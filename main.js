@@ -1,10 +1,14 @@
-const http = require('http');
+const port=8080;
 
-const requestListener = function (req, res) {
-  res.writeHead(200);
-  res.end('ITIS week 1 Assignment');
-}
+console.log("ITIS week 1 Assignment");
 
-const server = http.createServer(requestListener);
-server.listen(8080);
-console.log("Hello world");
+const express = require('express')
+const app = express()
+
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
+
+app.listen(port, () => {
+  console.log(`Hello World`)
+})
